@@ -1,0 +1,1 @@
+{"version":3,"file":"flat-list.d.ts","sourceRoot":"","sources":["../../../src/scrollable-view/flat-list.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,MAAM,OAAO,CAAC;AAC1B,OAAO,EAAE,QAAQ,IAAI,UAAU,EAAE,aAAa,EAAY,MAAM,cAAc,CAAC;AAU/E,MAAM,MAAM,gBAAgB,CAAC,CAAC,IAAI,aAAa,CAAC,CAAC,CAAC,GAAG;IACnD,KAAK,EAAE,MAAM,CAAC;CACf,CAAC;AAYF,eAAO,MAAM,WAAW;WAbf,MAAM;;;MAiBV,MAAM,YAAY,CAAC"}

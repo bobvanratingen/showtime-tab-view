@@ -1,0 +1,1 @@
+{"version":3,"file":"use-refresh-value.d.ts","sourceRoot":"","sources":["../../../src/hooks/use-refresh-value.tsx"],"names":[],"mappings":"AAAA,OAAO,QAGN,MAAM,yBAAyB,CAAC;AAEjC,eAAO,MAAM,sBAAsB,oBAChB,SAAS,WAAW,CAAC,MAAM,CAAC;mBAO5B,MAAM;kBACP,MAAM;mBACL,SAAS,WAAW,CAAC,MAAM,CAAC;6BAClB,MAAM;0CAclC,CAAC"}
