@@ -52,7 +52,6 @@
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^17.0.2",
-    "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
@@ -80,15 +79,15 @@
   "dependencies": {
     "react-stickynode": "^4.1.0",
     "react-native-gesture-handler": "~2.8.0",
-    "react-native-pager-view": "6.0.1",
-    "react-native-reanimated": "next",
+    "react-native-pager-view": "6.1.2",
+    "react-native-reanimated": "~2.12.0",
     "react-native-tab-view": "^3.3.4"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
     "react-native-gesture-handler": ">=2.0.0",
-    "react-native-reanimated": "next",
+    "react-native-reanimated": ">=2.0.0",
     "react-native-tab-view": ">3.3.0",
     "react-stickynode": ">=4.0.0",
     "react-native-pager-view": ">=5.0.0"
@@ -103,28 +102,6 @@
       "<rootDir>/example/node_modules",
       "<rootDir>/lib/"
     ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true
-    },
-    "github": {
-      "release": true
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": "angular"
-      }
-    }
   },
   "eslintConfig": {
     "root": true,
