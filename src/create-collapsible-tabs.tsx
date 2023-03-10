@@ -19,6 +19,9 @@ import type {
   Route,
   TabViewCustomRenders,
 } from "./types";
+import { runOnUI, useSharedValue } from "react-native-reanimated";
+import { _ScrollTo } from "./utils";
+import { useSceneInfo } from "./hooks/use-scene-info";
 
 export type CollapsibleTabViewRef = {};
 export type CollapsibleTabViewProps<T extends Route> = Partial<
@@ -60,12 +63,22 @@ function CollapsibleHeaderTabView<T extends Route>({
     gestureContainerRef.current?.setCurrentIndex(props.navigationState.index);
   }, [props.navigationState.index]);
 
+  const curIndexValue = useSharedValue(initialPageRef.current);
+  const { childScrollRef } = useSceneInfo(curIndexValue);
+
   useImperativeHandle(
     forwardedRef,
     () => ({
-      // Todo: add snapTo tab view content method
+      scrollToTop: () => {
+        runOnUI(() => {
+          "worklet";
+          Object.values(childScrollRef).forEach((ref) => {
+            _ScrollTo(ref, 0, 0, false);
+          });
+        })();
+      },
     }),
-    []
+    [childScrollRef]
   );
   const renderTabBar = useCallback(
     (
