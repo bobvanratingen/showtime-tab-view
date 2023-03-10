@@ -2,7 +2,7 @@ import React from "react";
 import { TabView, TabViewProps } from "react-native-tab-view";
 import type { CollapsibleHeaderProps, Route } from "./types";
 export type CollapsibleTabViewRef = {
-    scrollToPosition: ((position: number) => void) | undefined;
+    scrollToPosition: any;
 } | null;
 export type CollapsibleTabViewProps<T extends Route> = Partial<TabViewProps<T>> & Pick<TabViewProps<T>, "onIndexChange" | "navigationState" | "renderScene"> & CollapsibleHeaderProps<T>;
 export type ForwardTabViewProps<T extends Route> = CollapsibleTabViewProps<T> & {

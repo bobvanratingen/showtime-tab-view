@@ -21,7 +21,7 @@ import type {
 } from "./types";
 
 export type CollapsibleTabViewRef = {
-  scrollToPosition: ((position: number) => void) | undefined;
+  scrollToPosition: any;
 } | null;
 
 export type CollapsibleTabViewProps<T extends Route> = Partial<
@@ -63,12 +63,16 @@ function CollapsibleHeaderTabView<T extends Route>({
     gestureContainerRef.current?.setCurrentIndex(props.navigationState.index);
   }, [props.navigationState.index]);
 
+  const scrollToPosition = useCallback((position: number) => {
+    gestureContainerRef.current?.scrollToPosition(position);
+  }, []);
+
   useImperativeHandle(
     forwardedRef,
     () => ({
-      scrollToPosition: gestureContainerRef.current?.scrollToPosition,
+      scrollToPosition: scrollToPosition,
     }),
-    [gestureContainerRef]
+    [scrollToPosition]
   );
 
   const renderTabBar = useCallback(
