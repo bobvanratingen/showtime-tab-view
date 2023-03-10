@@ -20,7 +20,10 @@ import type {
   TabViewCustomRenders,
 } from "./types";
 
-export type CollapsibleTabViewRef = {};
+export type CollapsibleTabViewRef = {
+  scrollToPosition: ((position: number) => void) | undefined;
+} | null;
+
 export type CollapsibleTabViewProps<T extends Route> = Partial<
   TabViewProps<T>
 > &
@@ -63,12 +66,9 @@ function CollapsibleHeaderTabView<T extends Route>({
   useImperativeHandle(
     forwardedRef,
     () => ({
-      removeInfo: () => {
-        console.log("123");
-      },
-      // Todo: add snapTo tab view content method
+      scrollToPosition: gestureContainerRef.current?.scrollToPosition,
     }),
-    []
+    [gestureContainerRef]
   );
 
   const renderTabBar = useCallback(

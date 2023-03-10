@@ -38,7 +38,7 @@ const { width } = Dimensions.get("window");
 
 export type GestureContainerRef = {
   setCurrentIndex: (index: number) => void;
-  scrollToPosition: (location: number) => void;
+  scrollToPosition: (position: number) => void;
 } | null;
 
 export const GestureContainer = React.forwardRef<
