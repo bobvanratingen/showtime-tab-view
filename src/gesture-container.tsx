@@ -38,6 +38,7 @@ const { width } = Dimensions.get("window");
 
 export type GestureContainerRef = {
   setCurrentIndex: (index: number) => void;
+  scrollToPosition: (location: number) => void;
 } | null;
 
 export const GestureContainer = React.forwardRef<
@@ -647,8 +648,16 @@ export const GestureContainer = React.forwardRef<
       setCurrentIndex: (index: number) => {
         curIndexValue.value = index;
       },
+      scrollToPosition: (position: number) => {
+        runOnUI(() => {
+          "worklet";
+          Object.values(childScrollRef).forEach((ref) => {
+            _ScrollTo(ref, 0, position, true);
+          });
+        })();
+      },
     }),
-    [curIndexValue]
+    [curIndexValue, childScrollRef]
   );
 
   return (
