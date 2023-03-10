@@ -7,6 +7,7 @@ export { TabFlatList, TabScrollView, TabSectionList } from "./scrollable-view";
 export * from "./create-collapsible-tabs";
 export * from "./scene";
 export * from "./types";
+export * from "./hooks";
 export type {
   TabScrollViewProps,
   TabFlatListProps,

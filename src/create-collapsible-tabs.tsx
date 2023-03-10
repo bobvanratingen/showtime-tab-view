@@ -63,6 +63,9 @@ function CollapsibleHeaderTabView<T extends Route>({
   useImperativeHandle(
     forwardedRef,
     () => ({
+      removeInfo: () => {
+        console.log("123");
+      },
       // Todo: add snapTo tab view content method
     }),
     []
