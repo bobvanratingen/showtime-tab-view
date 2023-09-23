@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { useCallback, useEffect, useRef } from "react";
 import { StyleSheet } from "react-native";
 
@@ -82,6 +83,7 @@ export function SceneComponent<P extends object>({
   useEffect(() => {
     refHasChanged?.(nativeGestureRef.current);
   }, [refHasChanged]);
+
   useEffect(() => {
     if (scollViewRef && scollViewRef.current) {
       updateSceneInfo({

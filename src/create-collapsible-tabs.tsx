@@ -70,7 +70,7 @@ function CollapsibleHeaderTabView<T extends Route>({
   useImperativeHandle(
     forwardedRef,
     () => ({
-      scrollToPosition: scrollToPosition,
+      scrollToPosition,
     }),
     [scrollToPosition]
   );
